@@ -6,6 +6,15 @@ from models import MovieReview
 def index():
     return render_template('index.html')
 
+@app.route('/donaldrev')
+def donaldrev():
+    return render_template('donaldrev.html')
+
+
+@app.route('/view')
+def view():
+    return render_template('view.html')
+
 @app.route('/data')
 def data():
     reviews = MovieReview.query.order_by(MovieReview.time_created.desc()).all()
