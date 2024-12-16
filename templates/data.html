@@ -1,3 +1,6 @@
+
+<!----
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -15,12 +18,12 @@
         <main>
             <h1>Data Page</h1>
             <div class="container mt-4">
-                <a href="{{ url_for('add_review') }}" class="btn btn-primary mb-4">Add Movie Review</a>
+                <a href="{{ url_for('add_review') }}" class="btn btn-primary mb-4">Add Restaurant Review</a>
                 
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Movie Name</th>
+                            <th scope="col">Restaurant Name</th>
                             <th scope="col">Review</th>
                             <th scope="col">Rating</th>
                             <th scope="col">Date Added</th>
@@ -29,7 +32,7 @@
                     <tbody>
                         {% for review in reviews %}
                         <tr>
-                            <td>{{ review.movie_name }}</td>
+                            <td>{{ review.Restaurant_name }}</td>
                             <td>{{ review.review }}</td>
                             <td>{{ review.rating }}/5</td>
                             <td>{{ review.time_created.strftime('%Y-%m-%d %H:%M') }}</td>
@@ -43,4 +46,4 @@
             <p>&copy; 2024 My Website</p>
         </footer>
     </body>
-</html>
+</html>   -->

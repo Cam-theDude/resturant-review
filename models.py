@@ -2,9 +2,9 @@ from app import db
 from datetime import datetime
 
 
-class MovieReview(db.Model):
+class RestaurantReview(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    movie_name = db.Column(db.String(200), nullable=False)
+    Restaurant_name = db.Column(db.String(200), nullable=False)
     review = db.Column(db.Text, nullable=False)
     rating = db.Column(db.Float, nullable=False)
     time_created = db.Column(db.DateTime, default=datetime.utcnow)
