@@ -32,7 +32,7 @@
                     <tbody>
                         {% for review in reviews %}
                         <tr>
-                            <td>{{ review.Restaurant_name }}</td>
+                            <td>{{ review.restaurant_name }}</td>
                             <td>{{ review.review }}</td>
                             <td>{{ review.rating }}/5</td>
                             <td>{{ review.time_created.strftime('%Y-%m-%d %H:%M') }}</td>

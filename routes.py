@@ -17,7 +17,7 @@ def data():
 def add_review():
     if request.method == 'POST':
         new_review = RestaurantReview(
-            movie_name=request.form['restaurant_name'],
+            restaurant_name=request.form['Restaurant_name'],
             review=request.form['review'],
             rating=float(request.form['rating'])
         )
@@ -39,7 +39,7 @@ def edit_review(review_id):
         
  
     if request.method == 'POST':
-        review.movie_name = request.form['restaurant_name']
+        review.restaurant_name = request.form['Restaurant_name']
         review.review = request.form['review']
         review.rating = float(request.form['rating'])
         
