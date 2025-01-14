@@ -96,12 +96,16 @@
     <button data-filter="fast-food">Fast Food</button>
     <button data-filter="dairy Queen">dairy Queen</button>
   </div>
-    <div class="rounded-container">
+
+  <input type="text" id="filterInput" placeholder="Search for a restaurant..." onkeyup="filterRestaurants()">
+
+  
+    <div class="rounded-container" id="McDonald">
       <div class="logo">
         <img src="{{ url_for('static', filename='mcdonald.png') }}" alt="McDonald's logo">
       </div>
       
-      <div class="content">
+      <div class="content" >
         <p class="name">Mcdonald's</p>
         <p class="description">
           McDonald's is the world's largest fast-food chain, famous for its iconic Big Mac, golden fries, and globally recognized Golden Arches. Since its founding in 1940, it has become a symbol of fast, convenient, and affordable dining in over 100 countries.
@@ -115,7 +119,7 @@
   </a>
     <br><br>
 
-  <div class="rounded-container"  data-category="dairy Queen">
+  <div class="rounded-container"  id="Dairy Queen">
     <div class="logo">
       <img src="{{ url_for('static', filename='dairy.png') }}" alt="Dairy Quenn logo">
     </div>
@@ -125,7 +129,25 @@
       <p class="description">Dairy Queen is a popular fast-food chain known for its soft-serve ice cream, signature Blizzards, and classic American fare like burgers and fries. Founded in 1940, it has become a beloved destination for sweet treats and casual dining worldwide.</p>
     </div>
   </div>
-  <br><br>
+  <script>
+    function filterRestaurants() {
+      var filter = document.getElementById("filterInput").value.toUpperCase();
+      
+   
+      var containers = document.getElementsByClassName("rounded-container");
+      
+     
+      for (var i = 0; i < containers.length; i++) {
+        var name = containers[i].getElementsByClassName("name")[0].innerText;
+        
+        if (name.toUpperCase().indexOf(filter) > -1) {
+          containers[i].style.display = ""; 
+        } else {
+          containers[i].style.display = "none"; 
+        }
+      }
+    }
+  </script>
 </body>
 </html>
 

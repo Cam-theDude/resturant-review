@@ -1,5 +1,6 @@
 
 from flask import render_template, request, redirect, url_for
+from sqlalchemy import func
 from app import app, db
 from models import RestaurantReview
 
@@ -54,6 +55,14 @@ def delete_review(review_id):
     db.session.delete(review)
     db.session.commit()
     return redirect(url_for('data'))
+
+@app.route('/rating_average', methods=['GET', 'POST'])
+def rating_average():
+    average_rating = db.session.query(func.avg(RestaurantReview.rating)).scalar()
+
+    return render_template('rating_average.html', average_rating=average_rating)
+
+
 
 
 
