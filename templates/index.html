@@ -10,7 +10,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      background-color: #fff3e0; 
+      background-color: #d6c6c6; 
     }
 
     .rounded-container {
@@ -61,41 +61,52 @@
       color: #ff7043; 
     }
     .rounded-link {
-  text-decoration: none; 
-}
+      text-decoration: none; 
+    }
+    .topnav {
+      background-color: #333;
+      overflow: hidden;
+      width: 100%; /* Full width */
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
 
-  </style>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    .topnav a {
+      display: inline-block; /* Align links in a single line */
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+     background-color: #ddd;
+     color: black;
+    }
+
+    .topnav a.active {
+     background-color: #04AA6D;
+     color: white;
+    }
+    h3 {
+      text-align: left;
+       color: darkslategray;
+    }
+</style>
 </head>
 <body>
 
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+<body>
+
   <h3>KC Restaurant Review</h3>
-  <div id="filter-buttons">
-    <button data-filter="all">All</button>
-    <button data-filter="fast-food">Fast Food</button>
-    <button data-filter="dairy Queen">dairy Queen</button>
-  </div>
+
 
   <input type="text" id="filterInput" placeholder="Search for a restaurant..." onkeyup="filterRestaurants()">
 
@@ -117,7 +128,7 @@
       </div>
     </div>
   </a>
-    <br><br>
+    <br>
 
   <div class="rounded-container"  id="Dairy Queen">
     <div class="logo">

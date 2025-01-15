@@ -20,15 +20,17 @@
                 <a href="{{ url_for('add_review') }}" class="btn btn-primary mb-4">Add Restaurant Review</a>
                 
                 <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Restaurant Name</th>
-                            <th scope="col">Review</th>
-                            <th scope="col">Rating</th>
-                            <th scope="col">Date Added</th>
-                            <th scope="col">Actions</th>
+                    <div class="rounded-container">
+                        <thead>
+                            <tr>
+                                <th scope="col">Restaurant Name</th>
+                                <th scope="col">Review</th>
+                                <th scope="col">Rating</th>
+                                <th scope="col">Date Added</th>
+                                <th scope="col">Actions</th>
                         </tr>
                     </thead>
+                    </div>
                     <tbody>
                         {% for review in reviews %}
                         <tr>
