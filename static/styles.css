@@ -178,3 +178,55 @@ color: aqua;
 .container {
 background-color: #c7c1c1;
 }
+.card-body {
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    
+}
+
+.card-clicked {
+    margin: 0 auto
+    background-color rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px); 
+    width: 300px;
+    height: 300px;
+
+  
+}
+
+.card-container {
+    position: relative;
+}
+
+.card-body {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-body.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}

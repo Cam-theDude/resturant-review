@@ -24,10 +24,11 @@
                         {% for review in reviews %}
                         <div class="col-md-4 mb-4">
                             <div class="card h-100">
-                                <div class="card-body">
+                                <div class="card-body" id="card">
                                     <h5 class="card-title">{{ review.restaurant_name }}</h5>
                                     <p class="card-text"><strong>Review:</strong> {{ review.review }}</p>
                                     <p class="card-text"><strong>Rating:</strong> {{ review.rating }}/5</p>
+
                                     <p class="card-text"><small class="text-muted"><strong>Date Added:</strong> {{ review.time_created.strftime('%Y-%m-%d %H:%M') }}</small></p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between">
@@ -42,9 +43,29 @@
                     </div>
                 </div>
             </div>
+            
+            <script>
+                const myButton = document.getElementById("card");
+
+                myButton.addEventListener("click", function() {
+                
+                 console.log("Button clicked!");
+                });
+
+
+
+
+  
+
+            </script>
+
+            
         </main>
         <footer>
             <p>&copy; 2024 My Website</p>
         </footer>
+
+        
+    
     </body>
 </html>
