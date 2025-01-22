@@ -4,9 +4,14 @@ from sqlalchemy import func
 from app import app, db
 from models import RestaurantReview
 
-@app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/')
 def view():
     return render_template('view.html')
