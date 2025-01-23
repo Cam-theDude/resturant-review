@@ -31,6 +31,8 @@
 
                                     <p class="card-text"><small class="text-muted"><strong>Date Added:</strong> {{ review.time_created.strftime('%Y-%m-%d %H:%M') }}</small></p>
                                 </div>
+
+
                                 <div class="card-footer d-flex justify-content-between">
                                     <a href="{{ url_for('edit_review', review_id=review.id) }}" class="btn btn-primary btn-sm">Edit</a>
                                     <form action="{{ url_for('delete_review', review_id=review.id) }}" method="POST" style="margin: 2;">
@@ -44,20 +46,30 @@
                 </div>
             </div>
             
+           
+
             <script>
-                const myButton = document.getElementById("card");
-
-                myButton.addEventListener("click", function() {
-                
-                 console.log("Button clicked!");
+                const cards = document.querySelectorAll('.card');
+                const body = document.body;
+            
+                cards.forEach(card => {
+                    card.addEventListener('click', () => {
+                        const activeCard = document.querySelector('.card.active');
+                     
+            
+                        if (activeCard) {
+                            activeCard.classList.remove('active');
+                            overlay.classList.remove('show');
+                        }
+            
+                        card.classList.add('active');
+                        
+                    });
                 });
-
-
-
-
-  
+            
 
             </script>
+            
 
             
         </main>
