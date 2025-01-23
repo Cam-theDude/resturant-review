@@ -129,7 +129,9 @@ background-color: #c7c1c1;
 
 
 .card.active {
+    background-color: #000;
     position: absolute; 
+    border-color: 3px #333;
     top: 50%;
     left: 50%;
     background-position: center;
@@ -137,13 +139,13 @@ background-color: #c7c1c1;
     background-size: cover;
     transform: translate(-50%, -50%);
     z-index: 1050;
-    width: 80%; 
-    max-height: 90vh; 
+    width: 60%; 
+    max-height: 60%; 
     overflow-y: auto; 
     word-wrap: break-word; 
     word-break: break-word; 
     overflow-wrap: break-word; 
-
+    font-family: cursive;
     font-size: 1rem;
 
 }

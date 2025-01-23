@@ -50,7 +50,7 @@
 
             <script>
                 const cards = document.querySelectorAll('.card');
-                const body = document.body;
+
             
                 cards.forEach(card => {
                     card.addEventListener('click', () => {
@@ -63,6 +63,8 @@
                         }
             
                         card.classList.add('active');
+                        card.style.whiteSpace = ''; 
+
                         
                     });
                 });
