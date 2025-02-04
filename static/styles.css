@@ -106,13 +106,12 @@ background-color: #c7c1c1;
     transition: width 0.5s, height 0.5s;
     overflow-wrap: break-word;
     font-size: 1rem;
-    white-space: nowrap; 
+    white-space: nowrap; /* REMOVE this to allow wrapping */
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: white;
-
 }
 
 
@@ -137,4 +136,9 @@ background-color: #c7c1c1;
     font-family: cursive;
     font-size: 1rem;
 
+}
+
+.card.active .card-body {
+    white-space: normal;  /* Allow text to wrap */
+    overflow: visible; 
 }

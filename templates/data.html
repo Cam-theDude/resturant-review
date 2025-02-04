@@ -52,22 +52,17 @@
                 const cards = document.querySelectorAll('.card');
 
             
-                cards.forEach(card => {
-                    card.addEventListener('click', () => {
-                        const activeCard = document.querySelector('.card.active');
-                     
-            
-                        if (activeCard) {
-                            activeCard.classList.remove('active');
-                            overlay.classList.remove('show');
-                        }
-            
-                        card.classList.add('active');
+                document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+        const activeCard = document.querySelector('.card.active');
 
-                        
-                    });
-                });
-            
+        if (activeCard && activeCard !== card) {
+            activeCard.classList.remove('active');
+        }
+
+        card.classList.toggle('active');
+    });
+});            
 
             </script>
             
