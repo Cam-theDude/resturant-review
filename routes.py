@@ -8,19 +8,27 @@ from models import RestaurantReview
 def index():
     return render_template('index.html')
 
+
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-@app.route('/')
-def view():
-    return render_template('view.html')
-
 @app.route('/data')
 def data():
     # Query all reviews from the database, ordered by time_created (newest first)
-    reviews = RestaurantReview.query.order_by(RestaurantReview.time_created.desc()).all()
+    reviews = RestaurantReview.query.order_by(RestaurantReview.time_created.desc()).filter(RestaurantReview.restaurant_name=="MCDONALDS").all()
     return render_template('data.html', reviews=reviews)
+
+@app.route('/datas')
+def datas():
+    # Query all reviews from the database, ordered by time_created (newest first)
+    reviews = RestaurantReview.query.order_by(RestaurantReview.time_created.desc()).filter(RestaurantReview.restaurant_name=="DAIRY").all()
+    return render_template('datas.html', reviews=reviews)
+
+
+
+
+
 
 @app.route('/add_review', methods=['GET', 'POST'])
 def add_review():
@@ -69,10 +77,6 @@ def rating_average():
     average_rating = db.session.query(func.avg(RestaurantReview.rating)).scalar()
 
     return render_template('rating_average.html', average_rating=average_rating)
-
-
-
-
 
 
 

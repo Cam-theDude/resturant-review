@@ -9,3 +9,6 @@ class RestaurantReview(db.Model):
     rating = db.Column(db.Float, nullable=False)
     time_created = db.Column(db.DateTime, default=datetime.utcnow)
     last_updated = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+    
