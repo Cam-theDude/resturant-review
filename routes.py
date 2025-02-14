@@ -16,14 +16,20 @@ def about():
 @app.route('/data')
 def data():
     # Query all reviews from the database, ordered by time_created (newest first)
-    reviews = RestaurantReview.query.order_by(RestaurantReview.time_created.desc()).filter(RestaurantReview.restaurant_name=="MCDONALDS").all()
+    reviews = RestaurantReview.query.order_by(RestaurantReview.time_created.desc()).filter(RestaurantReview.restaurant_name=="mcdonalds").all()
     return render_template('data.html', reviews=reviews)
 
 @app.route('/datas')
 def datas():
     # Query all reviews from the database, ordered by time_created (newest first)
-    reviews = RestaurantReview.query.order_by(RestaurantReview.time_created.desc()).filter(RestaurantReview.restaurant_name=="DAIRY").all()
+    reviews = RestaurantReview.query.order_by(RestaurantReview.time_created.desc()).filter(RestaurantReview.restaurant_name=="dairy queen").all()
     return render_template('datas.html', reviews=reviews)
+
+
+
+
+
+
 
 
 
