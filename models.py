@@ -2,6 +2,8 @@ from app import db
 from datetime import datetime
 
 
+
+
 class RestaurantReview(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     restaurant_name = db.Column(db.String(200), nullable=False)
@@ -10,5 +12,3 @@ class RestaurantReview(db.Model):
     time_created = db.Column(db.DateTime, default=datetime.utcnow)
     last_updated = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-
-    

@@ -11,13 +11,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    background-color: #9e9393; 
 }
 
 
 header {
     padding: 2rem 0;
     text-align: center;
-    border-bottom: 1px solid #eee;
+
 }
 
 
@@ -135,6 +136,7 @@ background-color: #c7c1c1;
     overflow-wrap: break-word; 
     font-family: cursive;
     font-size: 1rem;
+    
 
 }
 

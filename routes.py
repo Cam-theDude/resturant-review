@@ -4,14 +4,25 @@ from sqlalchemy import func
 from app import app, db
 from models import RestaurantReview
 
+
+
+
+
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    average_rating = db.session.query(func.avg(RestaurantReview.rating)).scalar()
+    if average_rating is not None:
+        average_rating = round(average_rating, 1)
+
+    return render_template('index.html', average_rating=average_rating)
 
 
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+
 
 @app.route('/data')
 def data():
@@ -26,14 +37,11 @@ def datas():
     return render_template('datas.html', reviews=reviews)
 
 
-
-
-
-
-
-
-
-
+@app.route('/dataa')
+def dataa():
+    # Query all reviews from the database, ordered by time_created (newest first)
+    reviews = RestaurantReview.query.order_by(RestaurantReview.time_created.desc()).filter(RestaurantReview.restaurant_name=="pizza hut").all()
+    return render_template('dataa.html', reviews=reviews)
 
 
 @app.route('/add_review', methods=['GET', 'POST'])
@@ -62,7 +70,7 @@ def edit_review(review_id):
         
  
     if request.method == 'POST':
-        review.restaurant_name = request.form['Restaurant_name']
+        review.restaurant_name = request.form['restaurant_name']
         review.review = request.form['review']
         review.rating = float(request.form['rating'])
         
@@ -78,12 +86,9 @@ def delete_review(review_id):
     db.session.commit()
     return redirect(url_for('data'))
 
-@app.route('/rating_average', methods=['GET', 'POST'])
-def rating_average():
-    average_rating = db.session.query(func.avg(RestaurantReview.rating)).scalar()
 
-    return render_template('rating_average.html', average_rating=average_rating)
 
+  
 
 
 

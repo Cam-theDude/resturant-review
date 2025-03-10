@@ -95,6 +95,12 @@
       text-align: left;
        color: darkslategray;
     }
+    p {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+      color: #db6541; 
+    }
 </style>
 </head>
 <body>
@@ -110,6 +116,7 @@
 
 
   <input type="text" id="filterInput" placeholder="Search for a restaurant..." onkeyup="filterRestaurants()">
+  
 
   
     <div class="rounded-container" id="McDonald">
@@ -123,9 +130,16 @@
           McDonald's is the world's largest fast-food chain, famous for its iconic Big Mac, golden fries, and globally recognized Golden Arches. Since its founding in 1940, it has become a symbol of fast, convenient, and affordable dining in over 100 countries.
         </p>
         
-        
-        
-        <a href="/data" class="rounded-link" >View Reviews</a>
+
+
+
+
+        <div class="col-sm-4">
+          <p>Mcdonalds Rating: {{ average_rating }}</p>
+        </div>
+        <div class="col-sm-8">
+          <a href="/data" class="rounded-link" >View Reviews</a>
+        </div>
         
         
       </div>
@@ -144,6 +158,33 @@
       <a href="/datas" class="rounded-link" >View Reviews</a>
     </div>
   </div>
+  
+
+<br>
+  <div class="rounded-container" id="McDonald">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='pizzahut.png') }}" alt="Pizza Hut logo">
+    </div>
+    
+    <div class="content" >
+      <p class="name">Pizza Hut</p>
+      <p class="description">
+        Pizza Hut is a popular international restaurant chain known for its pan pizzas, stuffed crust, and a variety of pasta, wings, and sides. Founded in 1958, it has grown into one of the largest pizza franchises, offering dine-in, takeout, and delivery services worldwide.
+      </p>
+      
+
+
+
+      <div class="col-sm-8">
+        <a href="/dataa" class="rounded-link" >View Reviews</a>
+      </div>
+      
+      
+    </div>
+  </div>
+
+
+
   <script>
     function filterRestaurants() {
       var filter = document.getElementById("filterInput").value.toUpperCase();
@@ -162,6 +203,7 @@
         }
       }
     }
+    
   </script>
 </body>
 </html>
